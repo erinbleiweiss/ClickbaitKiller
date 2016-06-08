@@ -1,0 +1,6 @@
+.clickbait{
+    pointer-events: none;
+    background: #F2DEDE;
+    color: #A22A46 !important;
+    padding: 0 15px;
+}
