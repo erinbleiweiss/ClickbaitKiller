@@ -1,6 +1,8 @@
 var clickbait_phrases = [
     "Bernie Sanders",
     "(will|may) surprise you",
+    "\d ((stupid|dumb)\s)*reason",
+
     "find out why",
 
     "chick-fil-a",
@@ -20,13 +22,15 @@ var clickbait_phrases = [
     "you have to watch"
 ];
 
-chrome.storage.sync.get(function (data) {
-    var isToggled = data.toggle;
-    if (isToggled){
-        remove_clickbait()
-    }
-});
+//chrome.storage.sync.get(function (data) {
+//    var isToggled = data.toggle;
+//    if (isToggled){
+//        remove_clickbait()
+//    }
+//});
 
+
+remove_clickbait();
 
 function remove_clickbait(){
     $("a").each(function(i, item) {
