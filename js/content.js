@@ -1,7 +1,7 @@
 var clickbait_phrases = [
     "Bernie Sanders",
     "(will|may) surprise you",
-    "find out why"
+    "find out why",
 
     "chick-fil-a",
     "\\d+ things",
