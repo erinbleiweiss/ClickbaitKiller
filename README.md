@@ -28,8 +28,8 @@
 [12 times clickbait annoyed you recently](#)  
 [12:14pm: New York Times - This is real news!](#) 
 
-[WHOA, CLICKBAIT](#)  
-[WOW, CLICKBAIT](#)  
+[WHOA! CLICKBAIT!](#)  
+[WOW! CLICKBAIT!](#)  
 
 [This clickbait will blow your mind!](#)  
 [You have to watch this video of a girl avoiding a clickbait link!](#)

@@ -7,7 +7,7 @@ var clickbait_phrases = [
     "t_SUPER t_ADJ",
     // Number, 0-1 words, Noun
     "t_NUM\\s(?:\\w*\\s)?(\\b(t_NOUN)s*\\b)",
-    "t_INTER",
+    "t_INTER!",
     "t_ONE_LINE",
     "t_MOD_VERB t_VERB_PHRASE"
 ];
@@ -94,7 +94,9 @@ var SUPERLATIVES = [
 var INTERJECTIONS = [
     'whoa',
     'woah',
-    'wow'
+    'wow',
+    'incredible',
+    'unbelievable'
 ];
 
 var ONE_LINERS = [
