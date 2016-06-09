@@ -93,6 +93,7 @@ var keys = {
 // Regex should contain "NUMBER", signifying a numeral.  This method adds spelled-out numbers 0-20 as regex keywords.
 // Final regex will be in the format "(one|two|three|\d)-*"
 // The hyphen should account for numbers in the form "twenty-two"
+// Regex optionally includes "of the" (ex: 10 of the best ____ of all time)
 function spell_numbers(regex){
     var key_test = new RegExp('t_NUM', 'i');
     if((key_test).test(regex)) {
@@ -107,7 +108,7 @@ function spell_numbers(regex){
             if (i != numbers.length - 1) {
                 number_string += "|"
             } else {
-                number_string += "|\\d)-*"
+                number_string += "|\\d)-*(\\sof the)*"
             }
         });
         return regex.replace("t_NUM", number_string);
