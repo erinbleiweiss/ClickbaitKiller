@@ -221,13 +221,26 @@ function filter_and_push(regex){
 
 
 function remove_clickbait(){
+    var matched = false;
     $("a").each(function(i, item) {
+        matched = false;
         var link_text = item.text;
-
         for (var i=0; i<clickbait_regex.length; i++){
-            if (link_text.match(new RegExp(clickbait_regex[i], 'i')) != null){
+            if (link_text.match(new RegExp(clickbait_regex[i], 'i')) != null && !matched){
+                matched = true;
+                $(this).attr('cKiller', $(this).text());
                 $(this).text("Clickbait Blocked");
                 $(this).addClass("clickbait");
+
+                $(this).mouseenter(function() {
+                    var cKiller = $(this).attr('cKiller');
+                    $(this).text(cKiller);
+                    $(this).removeClass('clickbait');
+                });
+                $(this).mouseleave(function(){
+                    $(this).text("Clickbait Blocked");
+                    $(this).addClass('clickbait');
+                });
             }
         }
 
