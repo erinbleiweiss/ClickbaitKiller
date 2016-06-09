@@ -6,7 +6,7 @@ var clickbait_phrases = [
     "t_NUM t_SUPER",
     "t_SUPER t_ADJ", // <--- "best insane joker laugh"
     // Number, 0-1 Adj, 0-1 other words, Noun
-    "t_NUM\\s(t_ADJ\\s)?t_GENERIC(\\b(t_NOUN)s*\\b)",
+    "t_NUM\\s(t_ADJ\\s)?t_GENERIC1(\\b(t_NOUN)s*\\b)",
     "t_INTER!",
     "t_ONE_LINE",
     "t_MOD_VERB t_VERB_PHRASE",
@@ -22,7 +22,7 @@ var GENERIC_WORD = [
 
 var GENERIC_WORD_2 = [
     // 0-2 "other" words
-    '(?:\\w*\\s){0:2}'
+    '(?:\\w*\\s){0,2}'
 ];
 
 var ADJECTIVES = [
@@ -130,8 +130,7 @@ var ONE_LINERS = [
     'blow your mind',
     'you have to watch',
     'have you seen',
-    'what happen',
-    'the only .* you need'
+    'what happen'
 ];
 
 var SALES_PITCH_VERBS = [
@@ -179,7 +178,7 @@ var keys = {
     't_ADV': ADVERBS,
     't_LIST': LISTICLE,
     't_DET': DETERMINERS,
-    't_GENERIC': GENERIC_WORD,
+    't_GENERIC1': GENERIC_WORD,
     't_GENERIC2': GENERIC_WORD_2
 };
 
