@@ -3,7 +3,8 @@ var clickbait_regex = [];
 var clickbait_phrases = [
     "t_NUM (t_ADJ\\s)*reason(s)*",
     "t_MOD_VERB surprise you",
-    "t_DEM_PRONOUN t_ADJ"
+    "t_DEM_PRONOUN t_ADJ",
+    "t_NUM t_ADJ"
 ];
 
 //var clickbait_phrases = [
@@ -33,8 +34,13 @@ var ADJECTIVES = [
     'stupid',
     'dumb',
     'crazy',
+    'insane',
     'weird',
     'strange',
+    'surprising',
+    'shocking',
+    'funny',
+    'hilarious',
     'common',
     'simple'
 ];
@@ -58,10 +64,19 @@ var DEMONSTRATIVE_PRONOUNS = [
     'those'
 ];
 
+var SUPERLATIVES = [
+    'most',
+    'greatest',
+    'least',
+    'best',
+    'worst'
+];
+
 var keys = {
     't_ADJ': ADJECTIVES,
     't_MOD_VERB': MODAL_VERBS,
-    't_DEM_PRONOUN': DEMONSTRATIVE_PRONOUNS
+    't_DEM_PRONOUN': DEMONSTRATIVE_PRONOUNS,
+    't_SUPER': SUPERLATIVES
 };
 
 
