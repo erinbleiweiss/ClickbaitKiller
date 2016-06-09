@@ -42,5 +42,5 @@
 
 [The only clickbait blocker you'll ever need](#)
 
-[5 Are](#)
-[5 Carebears](#)
+[5 Are](#)  
+[5 Carebears](#)  
