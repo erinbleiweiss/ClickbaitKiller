@@ -7,7 +7,8 @@ var clickbait_phrases = [
     "t_NUM t_ADJ",
     "t_NUM t_SUPER",
     "t_SUPER t_ADJ",
-    "t_NUM.+t_NOUN"
+    "t_NUM.+t_NOUN",
+    "t_INTER"
 ];
 
 //var clickbait_phrases = [
@@ -83,6 +84,13 @@ var SUPERLATIVES = [
     'worst'
 ];
 
+var INTERJECTIONS = [
+    'whoa',
+    'woah',
+    'wow',
+    'unbelievable'
+];
+
 var WHITELIST = [
     'New York Times',
     'nytimes'
@@ -93,7 +101,8 @@ var keys = {
     't_NOUN': NOUNS,
     't_MOD_VERB': MODAL_VERBS,
     't_DEM_PRONOUN': DEMONSTRATIVE_PRONOUNS,
-    't_SUPER': SUPERLATIVES
+    't_SUPER': SUPERLATIVES,
+    't_INTER': INTERJECTIONS
 };
 
 

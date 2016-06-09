@@ -27,3 +27,7 @@
 
 [12 times clickbait annoyed you recently]()  
 [12:14pm: New York Times]() 
+
+[WHOA, CLICKBAIT]()  
+[WOW, CLICKBAIT]()  
+[This clickbait is UNBELIEVABLE]()  
