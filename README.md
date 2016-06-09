@@ -10,3 +10,6 @@
 [The 2 stupid reasons that everything else is also clickbait]()  
 [The three dumb reasons clickbait sites exist.]()  
 [The 3 dumb reasons clickbait sites still exist.]()  
+
+[Why is so much of the internet clickbait? The answer will surprise you.]()  
+[The amount of clickbait links per page may surprise you.]()  
