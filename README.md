@@ -15,3 +15,6 @@
 
 [Why is so much of the internet clickbait? The answer will surprise you.]()  
 [The amount of clickbait links per page may surprise you.]()  
+
+[This common dietary ingredient is linked to an increase in clickbait links]()  
+[These simple tricks will help eliminate clickbait forever!]()  

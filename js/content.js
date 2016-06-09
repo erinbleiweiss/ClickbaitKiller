@@ -2,7 +2,8 @@ var clickbait_regex = [];
 
 var clickbait_phrases = [
     "t_NUM (t_ADJ\\s)*reason(s)*",
-    "t_MODAL_VERB surprise you"
+    "t_MOD_VERB surprise you",
+    "t_DEM_PRONOUN t_ADJ"
 ];
 
 //var clickbait_phrases = [
@@ -31,7 +32,11 @@ var clickbait_phrases = [
 var ADJECTIVES = [
     'stupid',
     'dumb',
-    'crazy'
+    'crazy',
+    'weird',
+    'strange',
+    'common',
+    'simple'
 ];
 
 var MODAL_VERBS = [
@@ -46,9 +51,17 @@ var MODAL_VERBS = [
     'would'
 ];
 
+var DEMONSTRATIVE_PRONOUNS = [
+    'this',
+    'that',
+    'these',
+    'those'
+];
+
 var keys = {
     't_ADJ': ADJECTIVES,
-    't_MODAL_VERB': MODAL_VERBS
+    't_MOD_VERB': MODAL_VERBS,
+    't_DEM_PRONOUN': DEMONSTRATIVE_PRONOUNS
 };
 
 
