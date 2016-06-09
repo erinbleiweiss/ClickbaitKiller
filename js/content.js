@@ -11,7 +11,8 @@ var clickbait_phrases = [
     "t_ONE_LINE",
     "t_MOD_VERB t_VERB_PHRASE",
     "(t_NUM|t_SUPER).*t_LIST",
-    "t_NUM t_ARTICLE"
+    "t_NUM t_ARTICLE",
+    "t_NUM t_AUX_VERB"
 ];
 
 var ADJECTIVES = [
@@ -148,6 +149,11 @@ var keys = {
     't_DET': DETERMINERS
 };
 
+var use_word_boundary = [
+    ARTICLES,
+    AUXILARY_VERBS
+];
+
 var WHITELIST = [
     'one of the',
     'New York Times',
@@ -214,11 +220,13 @@ function synonyms(regex, synonyms, key){
     if((key_test).test(regex)){
         var synonym_string = "(";
         $.each(synonyms, function(i, synonym){
-            if ($.inArray(synonyms, [ARTICLES, AUXILARY_VERBS])){
+            //console.log(use_word_boundary);
+            if ($.inArray(synonyms, use_word_boundary)){
                 synonym_string += '\\b';
                 synonym_string += synonym;
                 synonym_string += '\\b';
             } else{
+                console.log(synonym);
                 synonym_string += synonym;
             }
             if (i != synonyms.length - 1) {
