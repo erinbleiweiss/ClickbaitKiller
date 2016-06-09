@@ -1,8 +1,6 @@
 var clickbait_regex = [];
 
 var clickbait_phrases = [
-    "t_NUM (t_ADJ\\s)*reason(s)*",
-    "t_MOD_VERB surprise you",
     "t_DEM_PRONOUN t_ADJ",
     "t_NUM t_ADJ",
     "t_NUM t_SUPER",
@@ -54,11 +52,12 @@ var ADJECTIVES = [
 ];
 
 var NOUNS = [
-    'things',
-    'times',
-    'facts',
-    'fails',
-    'ways'
+    'thing',
+    'time',
+    'fact',
+    'fail',
+    'way',
+    'reason'
 ];
 
 var MODAL_VERBS = [
@@ -98,7 +97,7 @@ var ONE_LINERS = [
     'blow your mind',
     'you have to watch',
     'have you seen',
-    'what happens'
+    'what happen'
 ];
 
 var VERB_PHRASES = [
