@@ -83,6 +83,11 @@ var SUPERLATIVES = [
     'worst'
 ];
 
+var WHITELIST = [
+    'New York Times',
+    'nytimes'
+];
+
 var keys = {
     't_ADJ': ADJECTIVES,
     't_NOUN': NOUNS,
@@ -100,6 +105,18 @@ var keys = {
 //});
 
 
+function whitelist(regex){
+    var whitelist_string = "(";
+    $.each(WHITELIST, function(i, synonym){
+        whitelist_string += synonym;
+        if (i != WHITELIST.length - 1) {
+            whitelist_string += "|"
+        } else {
+            whitelist_string += ")"
+        }
+    });
+    return "(?!.*" + whitelist_string + ")" + regex; //(?!.*t_WHITELIST)
+}
 
 // Regex should contain "NUMBER", signifying a numeral.  This method adds spelled-out numbers 0-20 as regex keywords.
 // Final regex will be in the format "(one|two|three|\d)-*"
@@ -153,6 +170,7 @@ function synonyms(regex, synonyms, key){
 
 
 function filter_and_push(regex){
+    regex = whitelist(regex);
     regex = spell_numbers(regex);
     $.each(keys, function(token, arr){
         regex = synonyms(regex, arr, token);

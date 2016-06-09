@@ -23,3 +23,4 @@
 [The 27 worst clickbait links ever]()  
 [42 of the best clickbait thwarting attempts]()  
 
+[The most insane clickbait links ever]()  
