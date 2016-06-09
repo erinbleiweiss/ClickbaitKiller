@@ -5,7 +5,9 @@ var clickbait_phrases = [
     "t_MOD_VERB surprise you",
     "t_DEM_PRONOUN t_ADJ",
     "t_NUM t_ADJ",
-    "t_NUM t_SUPER"
+    "t_NUM t_SUPER",
+    "t_SUPER t_ADJ",
+    "t_NUM.+t_NOUN"
 ];
 
 //var clickbait_phrases = [
@@ -46,6 +48,14 @@ var ADJECTIVES = [
     'simple'
 ];
 
+var NOUNS = [
+    'things',
+    'times',
+    'facts',
+    'fails',
+    'ways'
+];
+
 var MODAL_VERBS = [
     'can',
     'could',
@@ -75,6 +85,7 @@ var SUPERLATIVES = [
 
 var keys = {
     't_ADJ': ADJECTIVES,
+    't_NOUN': NOUNS,
     't_MOD_VERB': MODAL_VERBS,
     't_DEM_PRONOUN': DEMONSTRATIVE_PRONOUNS,
     't_SUPER': SUPERLATIVES
