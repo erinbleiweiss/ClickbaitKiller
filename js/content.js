@@ -5,7 +5,8 @@ var clickbait_phrases = [
     "t_NUM t_ADJ",
     "t_NUM t_SUPER",
     "t_SUPER t_ADJ",
-    "t_NUM.+t_NOUN",
+    // Number, 0-1 words, Noun
+    "t_NUM\\s(?:\\w*\\s)?(\\b(t_NOUN)s*\\b)",
     "t_INTER",
     "t_ONE_LINE",
     "t_MOD_VERB t_VERB_PHRASE"
@@ -44,6 +45,7 @@ var ADJECTIVES = [
     'surprising',
     'amazing',
     'unbelievable',
+    'breathtaking',
     'shocking',
     'funny',
     'hilarious',
@@ -54,10 +56,12 @@ var ADJECTIVES = [
 var NOUNS = [
     'thing',
     'time',
+    'moment',
     'fact',
     'fail',
     'way',
-    'reason'
+    'reason',
+    'trick'
 ];
 
 var MODAL_VERBS = [
@@ -102,13 +106,16 @@ var ONE_LINERS = [
 
 var VERB_PHRASES = [
     'surprise you',
-    'shock you'
+    'shock you',
+    'make you'
 ];
 
-var WHITELIST = [
-    'New York Times',
-    'nytimes'
+var ADVERBS = [
+    'really',
+    'very',
+    'extremely'
 ];
+
 
 var keys = {
     't_ADJ': ADJECTIVES,
@@ -118,8 +125,14 @@ var keys = {
     't_SUPER': SUPERLATIVES,
     't_INTER': INTERJECTIONS,
     't_ONE_LINE': ONE_LINERS,
-    't_VERB_PHRASE': VERB_PHRASES
+    't_VERB_PHRASE': VERB_PHRASES,
+    't_ADV': ADVERBS
 };
+
+var WHITELIST = [
+    'New York Times',
+    'nytimes'
+];
 
 
 //chrome.storage.sync.get(function (data) {
@@ -155,7 +168,7 @@ function spell_numbers(regex){
             'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen',
             'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'
         ];
-        var number_string = "(";
+        var number_string = "(?!.*(#|am|pm))(";
         $.each(numbers, function(i, number){
             number_string += number;
             if (i != numbers.length - 1) {
@@ -201,7 +214,7 @@ function filter_and_push(regex){
         regex = synonyms(regex, arr, token);
     });
     clickbait_regex.push(regex);
-    console.log(clickbait_regex);
+    //console.log(clickbait_regex);
 }
 
 

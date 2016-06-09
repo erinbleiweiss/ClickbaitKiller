@@ -26,7 +26,7 @@
 [The most insane clickbait links ever](#)  
 
 [12 times clickbait annoyed you recently](#)  
-[12:14pm: New York Times](#) 
+[12:14pm: New York Times - This is real news!](#) 
 
 [WHOA, CLICKBAIT](#)  
 [WOW, CLICKBAIT](#)  
