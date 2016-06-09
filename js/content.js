@@ -2,7 +2,7 @@ var clickbait_regex = [];
 
 var clickbait_phrases = [
     "t_DEM_PRONOUN t_ADJ",
-    "t_NUM t_ADJ",
+    "^t_NUM t_ADJ",
     "t_NUM t_SUPER",
     "t_SUPER t_ADJ",
     // Number, 0-1 Adj, 0-1 other words, Noun
@@ -149,10 +149,11 @@ var keys = {
     't_DET': DETERMINERS
 };
 
-var use_word_boundary = [
+
+var use_word_boundary = [].concat.apply([], [
     ARTICLES,
     AUXILARY_VERBS
-];
+]);
 
 var WHITELIST = [
     'one of the',
@@ -168,6 +169,22 @@ var WHITELIST = [
 //        remove_clickbait()
 //    }
 //});
+
+
+
+
+
+/**
+ * @description determine if an array contains one or more items from another array.
+ * @param {array} haystack the array to search.
+ * @param {array} arr the array providing items to check for in the haystack.
+ * @return {boolean} true|false if haystack contains at least one item from arr.
+ */
+var findOne = function (arr, haystack) {
+    return arr.some(function (v) {
+        return haystack.indexOf(v) >= 0;
+    });
+};
 
 
 function whitelist(regex){
@@ -220,13 +237,11 @@ function synonyms(regex, synonyms, key){
     if((key_test).test(regex)){
         var synonym_string = "(";
         $.each(synonyms, function(i, synonym){
-            //console.log(use_word_boundary);
-            if ($.inArray(synonyms, use_word_boundary)){
+            if (findOne(synonyms, use_word_boundary)){
                 synonym_string += '\\b';
                 synonym_string += synonym;
                 synonym_string += '\\b';
-            } else{
-                console.log(synonym);
+            } else {
                 synonym_string += synonym;
             }
             if (i != synonyms.length - 1) {
