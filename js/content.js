@@ -12,29 +12,6 @@ var clickbait_phrases = [
     "t_MOD_VERB t_VERB_PHRASE"
 ];
 
-//var clickbait_phrases = [
-//    "Bernie Sanders",
-//    "(will|may) surprise you",
-//
-//    "find out why",
-//
-//    "chick-fil-a",
-//    "\\d+ things",
-//    "ranked",
-//    "ranking",
-//    "will surprise you",
-//    "find out why",
-//    "this common",
-//    "\\d+ surprising",
-//    "\\d+ of the best",
-//    "most insane",
-//    "the only\\w*you need",
-//    "\\d+ facts",
-//    "\\d+ ways",
-//    "you have to watch"
-//];
-
-
 var ADJECTIVES = [
     'stupid',
     'dumb',
@@ -44,13 +21,18 @@ var ADJECTIVES = [
     'strange',
     'surprising',
     'amazing',
+    'awesome',
     'unbelievable',
     'breathtaking',
+    'mind-blowing',
     'shocking',
     'funny',
     'hilarious',
     'common',
-    'simple'
+    'simple',
+    'beautiful',
+    'adorable',
+    'gorgeous'
 ];
 
 var NOUNS = [
@@ -132,6 +114,7 @@ var keys = {
 };
 
 var WHITELIST = [
+    'one of the',
     'New York Times',
     'nytimes'
 ];
