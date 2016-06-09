@@ -1,6 +1,8 @@
 # ClickbaitKiller
 
 ### Example clickbait links
+[This link is perfectly fine!  No clickbait involved.]()
+
 [What's clickbait? The answer will surprise you!]()  
 [What is and is not considered clickbait may surprise you!]()  
 
