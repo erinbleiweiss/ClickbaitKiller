@@ -4,7 +4,8 @@ var clickbait_phrases = [
     "t_NUM (t_ADJ\\s)*reason(s)*",
     "t_MOD_VERB surprise you",
     "t_DEM_PRONOUN t_ADJ",
-    "t_NUM t_ADJ"
+    "t_NUM t_ADJ",
+    "t_NUM t_SUPER"
 ];
 
 //var clickbait_phrases = [
