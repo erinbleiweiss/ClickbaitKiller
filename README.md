@@ -30,4 +30,8 @@
 
 [WHOA, CLICKBAIT]()  
 [WOW, CLICKBAIT]()  
-[This clickbait is UNBELIEVABLE]()  
+
+[This clickbait will blow your mind!]()  
+[You have to watch this video of a girl avoiding a clickbait link!]()
+
+[The effects of clickbait on your brain may surprise you]()

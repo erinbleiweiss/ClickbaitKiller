@@ -8,7 +8,9 @@ var clickbait_phrases = [
     "t_NUM t_SUPER",
     "t_SUPER t_ADJ",
     "t_NUM.+t_NOUN",
-    "t_INTER"
+    "t_INTER",
+    "t_ONE_LINE",
+    "t_MOD_VERB t_VERB_PHRASE"
 ];
 
 //var clickbait_phrases = [
@@ -42,6 +44,8 @@ var ADJECTIVES = [
     'weird',
     'strange',
     'surprising',
+    'amazing',
+    'unbelievable',
     'shocking',
     'funny',
     'hilarious',
@@ -87,8 +91,19 @@ var SUPERLATIVES = [
 var INTERJECTIONS = [
     'whoa',
     'woah',
-    'wow',
-    'unbelievable'
+    'wow'
+];
+
+var ONE_LINERS = [
+    'blow your mind',
+    'you have to watch',
+    'have you seen',
+    'what happens'
+];
+
+var VERB_PHRASES = [
+    'surprise you',
+    'shock you'
 ];
 
 var WHITELIST = [
@@ -102,7 +117,9 @@ var keys = {
     't_MOD_VERB': MODAL_VERBS,
     't_DEM_PRONOUN': DEMONSTRATIVE_PRONOUNS,
     't_SUPER': SUPERLATIVES,
-    't_INTER': INTERJECTIONS
+    't_INTER': INTERJECTIONS,
+    't_ONE_LINE': ONE_LINERS,
+    't_VERB_PHRASE': VERB_PHRASES
 };
 
 
