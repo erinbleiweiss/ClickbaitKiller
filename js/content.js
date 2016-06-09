@@ -10,7 +10,8 @@ var clickbait_phrases = [
     "t_INTER!",
     "t_ONE_LINE",
     "t_MOD_VERB t_VERB_PHRASE",
-    "(t_NUM|t_SUPER).*t_LIST"
+    "(t_NUM|t_SUPER).*t_LIST",
+    "t_NUM t_ARTICLE"
 ];
 
 var ADJECTIVES = [
@@ -48,6 +49,12 @@ var NOUNS = [
     'trick',
     'ingredient',
     'supplement'
+];
+
+var ARTICLES = [
+    'a',
+    'an',
+    'the'
 ];
 
 var MODAL_VERBS = [
@@ -97,7 +104,8 @@ var ONE_LINERS = [
     'blow your mind',
     'you have to watch',
     'have you seen',
-    'what happen'
+    'what happen',
+    'the only .* you need'
 ];
 
 var VERB_PHRASES = [
@@ -117,10 +125,17 @@ var LISTICLE = [
     'ranking'
 ];
 
+var DETERMINERS = [
+    'first',
+    'last',
+    'only'
+];
+
 
 var keys = {
     't_ADJ': ADJECTIVES,
     't_NOUN': NOUNS,
+    't_ARTICLE': ARTICLES,
     't_MOD_VERB': MODAL_VERBS,
     't_AUX_VERB': AUXILARY_VERBS,
     't_DEM_PRONOUN': DEMONSTRATIVE_PRONOUNS,
@@ -129,13 +144,15 @@ var keys = {
     't_ONE_LINE': ONE_LINERS,
     't_VERB_PHRASE': VERB_PHRASES,
     't_ADV': ADVERBS,
-    't_LIST': LISTICLE
+    't_LIST': LISTICLE,
+    't_DET': DETERMINERS
 };
 
 var WHITELIST = [
     'one of the',
     'New York Times',
-    'nytimes'
+    'nytimes',
+    'Times Square'
 ];
 
 
@@ -197,7 +214,13 @@ function synonyms(regex, synonyms, key){
     if((key_test).test(regex)){
         var synonym_string = "(";
         $.each(synonyms, function(i, synonym){
-            synonym_string += synonym;
+            if ($.inArray(synonyms, [ARTICLES, AUXILARY_VERBS])){
+                synonym_string += '\\b';
+                synonym_string += synonym;
+                synonym_string += '\\b';
+            } else{
+                synonym_string += synonym;
+            }
             if (i != synonyms.length - 1) {
                 synonym_string += "|"
             } else {
