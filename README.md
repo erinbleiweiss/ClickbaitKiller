@@ -34,4 +34,9 @@
 [This clickbait will blow your mind!](#)  
 [You have to watch this video of a girl avoiding a clickbait link!](#)
 
-[The effects of clickbait on your brain may surprise you](#)
+[The effects of clickbait on your brain may surprise you](#)  
+[This common dietary ingredient is linked to an increase in clickbait articles](#)  
+
+[10 of this morning's clickbait articles ranked.](#)  
+[The definitive ranking of clickbait titles.](#)  
+

@@ -5,11 +5,12 @@ var clickbait_phrases = [
     "t_NUM t_ADJ",
     "t_NUM t_SUPER",
     "t_SUPER t_ADJ",
-    // Number, 0-1 words, Noun
-    "t_NUM\\s(?:\\w*\\s)?(\\b(t_NOUN)s*\\b)",
+    // Number, 0-1 Adj, 0-1 other words, Noun
+    "t_NUM\\s(t_ADJ\\s)?(?:\\w*\\s)?(\\b(t_NOUN)s*\\b)",
     "t_INTER!",
     "t_ONE_LINE",
-    "t_MOD_VERB t_VERB_PHRASE"
+    "t_MOD_VERB t_VERB_PHRASE",
+    "(t_NUM|t_SUPER).*t_LIST"
 ];
 
 var ADJECTIVES = [
@@ -30,6 +31,7 @@ var ADJECTIVES = [
     'hilarious',
     'common',
     'simple',
+    'easy',
     'beautiful',
     'adorable',
     'gorgeous'
@@ -43,7 +45,9 @@ var NOUNS = [
     'fail',
     'way',
     'reason',
-    'trick'
+    'trick',
+    'ingredient',
+    'supplement'
 ];
 
 var MODAL_VERBS = [
@@ -58,6 +62,13 @@ var MODAL_VERBS = [
     'would'
 ];
 
+var AUXILARY_VERBS = [
+    'are',
+    'is',
+    'was',
+    'were'
+];
+
 var DEMONSTRATIVE_PRONOUNS = [
     'this',
     'that',
@@ -70,7 +81,8 @@ var SUPERLATIVES = [
     'greatest',
     'least',
     'best',
-    'worst'
+    'worst',
+    'definitive'
 ];
 
 var INTERJECTIONS = [
@@ -100,17 +112,24 @@ var ADVERBS = [
     'extremely'
 ];
 
+var LISTICLE = [
+    'ranked',
+    'ranking'
+];
+
 
 var keys = {
     't_ADJ': ADJECTIVES,
     't_NOUN': NOUNS,
     't_MOD_VERB': MODAL_VERBS,
+    't_AUX_VERB': AUXILARY_VERBS,
     't_DEM_PRONOUN': DEMONSTRATIVE_PRONOUNS,
     't_SUPER': SUPERLATIVES,
     't_INTER': INTERJECTIONS,
     't_ONE_LINE': ONE_LINERS,
     't_VERB_PHRASE': VERB_PHRASES,
-    't_ADV': ADVERBS
+    't_ADV': ADVERBS,
+    't_LIST': LISTICLE
 };
 
 var WHITELIST = [
