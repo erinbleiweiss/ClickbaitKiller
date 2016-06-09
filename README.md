@@ -40,10 +40,9 @@
 [10 of this morning's clickbait articles ranked.](#)  
 [The definitive ranking of clickbait titles.](#)  
 
-[The only clickbait blocker you'll ever need](#)
-
-[5 Are](#)  
-[5 Carebears](#)  
-
-[5 A](#)  
-[5 Antelopes](#)  
+[The only clickbait blocker you need](#)  
+[The only clickbait blocker you'll ever need](#)  
+[The only clickbait blocker you will ever need](#)  
+[The clickbait blocker we need](#)  
+[The clickbait blocker we all need](#)  
+[The clickbait blocker we needed but not the clickbait blocker we deserve](#)  

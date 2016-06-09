@@ -4,15 +4,25 @@ var clickbait_phrases = [
     "t_DEM_PRONOUN t_ADJ",
     "^t_NUM t_ADJ",
     "t_NUM t_SUPER",
-    "t_SUPER t_ADJ",
+    "t_SUPER t_ADJ", // <--- "best insane joker laugh"
     // Number, 0-1 Adj, 0-1 other words, Noun
-    "t_NUM\\s(t_ADJ\\s)?(?:\\w*\\s)?(\\b(t_NOUN)s*\\b)",
+    "t_NUM\\s(t_ADJ\\s)?t_GENERIC(\\b(t_NOUN)s*\\b)",
     "t_INTER!",
     "t_ONE_LINE",
     "t_MOD_VERB t_VERB_PHRASE",
     "(t_NUM|t_SUPER).*t_LIST",
-    "t_NUM t_ARTICLE",
-    "t_NUM t_AUX_VERB"
+    // The        only     ___    you     will ever  need
+    "t_ARTICLE (t_DET\\s)?(.*)t_PRONOUN t_GENERIC2t_SALES"
+];
+
+var GENERIC_WORD = [
+    // 0-1 "other" words
+    '(?:\\w*\\s)?'
+];
+
+var GENERIC_WORD_2 = [
+    // 0-2 "other" words
+    '(?:\\w*\\s){0:2}'
 ];
 
 var ADJECTIVES = [
@@ -56,6 +66,21 @@ var ARTICLES = [
     'a',
     'an',
     'the'
+];
+
+var PRONOUNS = [
+    'I',
+    'I\'ll',
+    'you',
+    'you\'ll',
+    'he',
+    'he\'ll',
+    'she',
+    'she\'ll',
+    'we',
+    'we\'ll',
+    'they',
+    'they\'ll'
 ];
 
 var MODAL_VERBS = [
@@ -109,6 +134,11 @@ var ONE_LINERS = [
     'the only .* you need'
 ];
 
+var SALES_PITCH_VERBS = [
+    'need',
+    'want'
+];
+
 var VERB_PHRASES = [
     'surprise you',
     'shock you',
@@ -137,22 +167,27 @@ var keys = {
     't_ADJ': ADJECTIVES,
     't_NOUN': NOUNS,
     't_ARTICLE': ARTICLES,
+    't_PRONOUN': PRONOUNS,
     't_MOD_VERB': MODAL_VERBS,
     't_AUX_VERB': AUXILARY_VERBS,
     't_DEM_PRONOUN': DEMONSTRATIVE_PRONOUNS,
     't_SUPER': SUPERLATIVES,
     't_INTER': INTERJECTIONS,
     't_ONE_LINE': ONE_LINERS,
+    't_SALES': SALES_PITCH_VERBS,
     't_VERB_PHRASE': VERB_PHRASES,
     't_ADV': ADVERBS,
     't_LIST': LISTICLE,
-    't_DET': DETERMINERS
+    't_DET': DETERMINERS,
+    't_GENERIC': GENERIC_WORD,
+    't_GENERIC2': GENERIC_WORD_2
 };
 
 
 var use_word_boundary = [].concat.apply([], [
     ARTICLES,
-    AUXILARY_VERBS
+    AUXILARY_VERBS,
+    PRONOUNS
 ]);
 
 var WHITELIST = [
