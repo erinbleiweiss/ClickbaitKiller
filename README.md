@@ -24,3 +24,6 @@
 [42 of the best clickbait thwarting attempts]()  
 
 [The most insane clickbait links ever]()  
+
+[12 times clickbait annoyed you recently]()  
+[12:14pm: New York Times]() 
