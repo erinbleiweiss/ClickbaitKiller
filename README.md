@@ -45,4 +45,6 @@
 [The only clickbait blocker you will ever need](#)  
 [The clickbait blocker we need](#)  
 [The clickbait blocker we all need](#)  
-[The clickbait blocker we needed but not the clickbait blocker we deserve](#)  
+[The clickbait blocker we needed but not the clickbait blocker we deserved](#)  
+
+[Can you tell which of these links are clickbait?](#)  

@@ -1,6 +1,8 @@
 var clickbait_regex = [];
 
 var clickbait_phrases = [
+    "^t_DEM_PRONOUN",
+    "^t_MOD_VERB you.*\\?$",  // Can you ___?
     "t_DEM_PRONOUN t_ADJ",
     "^t_NUM t_ADJ",
     "t_NUM t_SUPER",
@@ -32,6 +34,7 @@ var ADJECTIVES = [
     'insane',
     'weird',
     'strange',
+    'absurd',
     'surprising',
     'amazing',
     'awesome',
@@ -267,7 +270,7 @@ function spell_numbers(regex){
 //    - key: String signifying keyword to be replaced (in format "KEY")
 // Returns: regex will be in the format "(synonym|alternative|substitute)"
 function synonyms(regex, synonyms, key){
-    var key_test = new RegExp(key, 'i');
+    var key_test = new RegExp(key, 'im');
     if((key_test).test(regex)){
         var synonym_string = "(";
         $.each(synonyms, function(i, synonym){
@@ -298,7 +301,7 @@ function filter_and_push(regex){
         regex = synonyms(regex, arr, token);
     });
     clickbait_regex.push(regex);
-    //console.log(clickbait_regex);
+    console.log(clickbait_regex);
 }
 
 
